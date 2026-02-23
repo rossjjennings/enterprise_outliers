@@ -7,7 +7,7 @@ def cython_block_shermor_0D( \
         np.ndarray[np.double_t,ndim=1] r, \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -48,7 +48,7 @@ def cython_block_shermor_0D_ld( \
         np.ndarray[np.double_t,ndim=1] r, \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -122,7 +122,7 @@ def cython_block_shermor_1D( \
         np.ndarray[np.double_t,ndim=1] r, \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -200,7 +200,7 @@ def cython_block_shermor_2D( \
         np.ndarray[np.double_t,ndim=2] Z, \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -312,7 +312,7 @@ def cython_draw_ecor( \
         np.ndarray[np.double_t,ndim=1] r, \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Given Jvec, draw new epoch-averaged residuals
 
@@ -356,7 +356,7 @@ def cython_shermor_draw_ecor( \
         np.ndarray[np.double_t,ndim=1] r, \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Do both the Sherman-Morrison block-inversion for Jitter,
     and the draw of the ecor parameters together (Cythonized)
@@ -410,7 +410,7 @@ def cython_update_ea_residuals( \
         np.ndarray[np.double_t,ndim=1] gibbsresiduals, \
         np.ndarray[np.double_t,ndim=1] gibbssubresiduals, \
         np.ndarray[np.double_t,ndim=1] eat, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Given epoch-averaged residuals, update the residuals, and the subtracted
     residuals, so that these can be further processed by the other conditional
@@ -434,7 +434,7 @@ def cython_update_ea_residuals( \
 
 
 def cython_Uj(np.ndarray[np.double_t,ndim=1] j, \
-        np.ndarray[np.int_t,ndim=2] Uinds, nobs):
+        np.ndarray[np.int64_t,ndim=2] Uinds, nobs):
     """
     Given epoch-averaged residuals (j), get the residuals.
     Used in 'updateDetSources'
@@ -455,7 +455,7 @@ def cython_Uj(np.ndarray[np.double_t,ndim=1] j, \
     return Uj
 
 def cython_UTx(np.ndarray[np.double_t,ndim=1] x, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Given residuals (x), get np.dot(U.T, x)
     Used in 'updateDetSources'
@@ -478,7 +478,7 @@ def cython_logdet_dN( \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
         np.ndarray[np.double_t,ndim=1] dNvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -524,7 +524,7 @@ def cython_logdet_dJ( \
         np.ndarray[np.double_t,ndim=1] Nvec, \
         np.ndarray[np.double_t,ndim=1] Jvec, \
         np.ndarray[np.double_t,ndim=1] dJvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -567,7 +567,7 @@ def cython_logdet_dN_dN( \
         np.ndarray[np.double_t,ndim=1] Jvec, \
         np.ndarray[np.double_t,ndim=1] dNvec1, \
         np.ndarray[np.double_t,ndim=1] dNvec2, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -624,7 +624,7 @@ def cython_logdet_dN_dJ( \
         np.ndarray[np.double_t,ndim=1] Jvec, \
         np.ndarray[np.double_t,ndim=1] dNvec, \
         np.ndarray[np.double_t,ndim=1] dJvec, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
@@ -675,7 +675,7 @@ def cython_logdet_dJ_dJ( \
         np.ndarray[np.double_t,ndim=1] Jvec, \
         np.ndarray[np.double_t,ndim=1] dJvec1, \
         np.ndarray[np.double_t,ndim=1] dJvec2, \
-        np.ndarray[np.int_t,ndim=2] Uinds):
+        np.ndarray[np.int64_t,ndim=2] Uinds):
     """
     Sherman-Morrison block-inversion for Jitter (Cythonized)
 
